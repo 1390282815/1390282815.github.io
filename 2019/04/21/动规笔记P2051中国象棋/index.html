@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · 电器蛋黄酱のBLOG</title>
+    <title>动规笔记P2051中国象棋 · 电器蛋黄酱のBLOG</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">电器蛋黄酱のBLOG</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">动规笔记P2051中国象棋</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            动规笔记P2051中国象棋
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="动规笔记">动规笔记</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">73</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">566</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/04/13</span>
+                    <span class="post-intro-time">2019/04/21</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,27 +401,37 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>#动规笔记</p>
+<p>##————P2051 中国象棋</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="##题目"></a>##<a href="https://www.luogu.org/problemnew/show/P2051" target="_blank" rel="noopener">题目</a></h2><p>#提取信息<br>     有一个(n , m)的棋盘在其中h放置棋子，每行每列不超过2个，有多少种放法</p>
+<p>#解法</p>
+<p>###1.暴力</p>
+<p>###2.状压</p>
+<p>###3.正解</p>
+<p>#暴力<br>     暴力枚举，30pt。</p>
+<p>#状压<br>     不是很适合，要用3进制状压，且状态与之前所有行有关联，3^100是压不动的。</p>
+<pre><code>可以拿50pt。
+</code></pre><p>#正解<br>     可以发现前i - 1行，棋子摆放的位置是不会影响到第i行的决策，</p>
+<pre><code>有影响的只有前i行，有多少列棋子数为0 ，1 ，2。
 
+可设出状态f[i//放了i行的棋子][j//棋子数为1的列的个数][k//棋子数为2的列的个数]
+
+之后的转移方程就比较容易推了，在第i行，考虑放0 ，1 ，2个棋子，放在棋子数为0 ，1 ，2的列中。
+
+具体看代码：
+</code></pre><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> #include&lt;bits/stdc++.h&gt;</span><br><span class="line"> #define FOR(a , b , c) for (int a = b; a &lt;= c; a++)</span><br><span class="line"> using namespace std;</span><br><span class="line"> const int M = 9999973;</span><br><span class="line"> long long n , m , ans , f[107][107][107];</span><br><span class="line"> int main () &#123;</span><br><span class="line"> scanf (&quot;%lld %lld&quot; , &amp;n , &amp;m);</span><br><span class="line"> f[0][0][0] = 1; //初始化</span><br><span class="line"> FOR(i , 1 , n) FOR(j , 0 , m) FOR(k , 0 , m - j) &#123;</span><br><span class="line">  f[i][j][k] += f[i - 1][j][k]; //不放棋子</span><br><span class="line">  if (j &gt;= 1) f[i][j][k] += ((m - (j - 1) - k) * f[i - 1][j - 1][k]) % M; //放一个在棋子数为0的列</span><br><span class="line">  if (j + 1 &lt;= m &amp;&amp; k &gt;= 1) f[i][j][k] += ((j + 1) * f[i - 1][j + 1][k - 1]) % M; //放一个在棋子数为1的列</span><br><span class="line">  if (j &gt;= 2) f[i][j][k] += (((m - (j - 2) - k) * (m - (j - 1) - k) / 2) * f[i - 1][j - 2][k]) % M; //放二个棋子都在棋子数为0的列</span><br><span class="line">  if (j + 2 &lt;= m &amp;&amp; k &gt;= 2) f[i][j][k] += (((j + 2) * (j + 1) / 2) * f[i - 1][j + 2][k - 2]) % M; //放二个棋子都在棋子数为1的列</span><br><span class="line">  if (k &gt;= 1 &amp;&amp; j &gt;= 1) f[i][j][k] += (j * (m - (j - 1) - k) * f[i - 1][j][k - 1]) % M;</span><br><span class="line"> &#125; //放二个棋子在棋子数为0 ，1的列</span><br><span class="line"> FOR(j , 0 , m) FOR(k , 0 , m - j) ans = (ans + f[n][j][k]) % M; //取进行到n行的所有状态</span><br><span class="line"> printf (&quot;%lld&quot; , ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#后记分析<br>     很像状压，陷进去可能出不来。</p>
+<pre><code>对于状态的考虑很重要。
+
+dp时的小细节，不能出界。
+</code></pre>
     </article>
     <!-- license  -->
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/04/14/建站纪念/" title="建站纪念">
-                    <div class="nextTitle">建站纪念</div>
-                </a>
             
         </li>
         <li class="previous">
@@ -540,7 +556,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">##题目</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -564,16 +580,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 1
         </div>
         <!-- search  -->
         
@@ -589,18 +598,15 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/14</span><a class="archive-post-title" href="/2019/04/14/建站纪念/">建站纪念</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href="/2019/04/13/hello-world/">Hello World</a>
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href="/2019/04/21/动规笔记P2051中国象棋/">动规笔记P2051中国象棋</a>
         </li>
     
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="动规笔记"><span class="iconfont-archer">&#xe606;</span>动规笔记</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

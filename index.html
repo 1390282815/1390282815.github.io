@@ -359,46 +359,39 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/04/14/建站纪念/">
+        <a class="abstract-title" href="/2019/04/21/动规笔记P2051中国象棋/">
             
-                <span>建站纪念</span>
+                <span>动规笔记P2051中国象棋</span>
         </a>
         <div class="abstract-content">
-            人生的第一个BLOG，有点小激动。data 2019/4/14
+            #动规笔记
+##————P2051 中国象棋
+##题目#提取信息     有一个(n , m)的棋盘在其中h放置棋子，每行每列不超过2个，有多少种放法
+#解法
+###1.暴力
+###2.状压
+###3.正解
+#暴力     暴力枚举，30pt。
+#状压     不是很适合，要用3进制状压，且状态与之前所有行有关联，3^100是压不动的。
+可以拿50pt。
+#正解     可以发现前i - 1行，棋子摆放的位置是不会影响到第i行的决策，
+有影响的只有前i行，有多少列棋子数为0 ，1 ，2。
+
+可设出状态f[i//放了i行的棋子][j//棋子数为1的列的个数][k//棋子数为2的列的个数]
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/14</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/21</span>
             </div>
             <!-- tags  -->
             
-        </div>
-    </article>
+            <div class="abstract-tags">
     
+        <a class="post-tag" href="javascript:void(0);" data-tags="动规笔记">动规笔记</a>
     
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/13/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/13</span>
-            </div>
-            <!-- tags  -->
+</div>
             
         </div>
     </article>
@@ -616,16 +609,9 @@ More...
     
     
     
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 1
         </div>
         <!-- search  -->
         
@@ -641,18 +627,15 @@ More...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/14</span><a class="archive-post-title" href="/2019/04/14/建站纪念/">建站纪念</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href="/2019/04/13/hello-world/">Hello World</a>
+            <span class="archive-post-date">04/21</span><a class="archive-post-title" href="/2019/04/21/动规笔记P2051中国象棋/">动规笔记P2051中国象棋</a>
         </li>
     
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="动规笔记"><span class="iconfont-archer">&#xe606;</span>动规笔记</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
