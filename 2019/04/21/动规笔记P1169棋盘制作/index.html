@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>[404] · 电器蛋黄酱のBLOG</title>
+    <title>动规笔记P1169棋盘制作 · 电器蛋黄酱のBLOG</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,7 +203,7 @@
 </head>
 
     
-        <body class="four-zero-four-body">
+        <body class="post-body">
     
     
 <header class="header">
@@ -211,6 +211,15 @@
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">电器蛋黄酱のBLOG</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">动规笔记P1169棋盘制作</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">电器蛋黄酱のBLOG</a>
 </header>
@@ -222,32 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
     
     
-    <!-- about页 -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/404-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [404]
-            <!-- about -->
+            动规笔记P1169棋盘制作
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-                May the Force be with you :&#41;
+            
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="动规笔记">动规笔记</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">517</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/21</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -348,8 +399,58 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <!-- 不可以删除，否则会调用post的layout  -->
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="动规笔记"><a href="#动规笔记" class="headerlink" title="动规笔记"></a>动规笔记</h1><h2 id="————P1169-棋盘制作"><a href="#————P1169-棋盘制作" class="headerlink" title="————P1169 棋盘制作"></a>————P1169 棋盘制作</h2><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a><a href="https://www.luogu.org/problemnew/show/P1169" target="_blank" rel="noopener">题目</a></h2><hr>
+<h1 id="提取信息"><a href="#提取信息" class="headerlink" title="提取信息"></a>提取信息</h1><pre><code>求不含障碍点的，最大子矩阵，正方形。
+</code></pre><h1 id="垂线法"><a href="#垂线法" class="headerlink" title="垂线法"></a>垂线法</h1><h1 id="参考-Clove-unique"><a href="#参考-Clove-unique" class="headerlink" title="参考@Clove_unique"></a>参考<a href="https://blog.csdn.net/Clove_unique/article/details/50512624" target="_blank" rel="noopener">@Clove_unique</a></h1><pre><code>l[i][j]:代表从(i , j)能到达的最左的位置
 
+r[i][j]:代表从(i , j)能到达的最右的位置
+
+u[i][j]:代表从(i , j)向上扩展的最长长度
+
+可以枚举出前i行(不包括i行以后的点)所有极大子矩阵(每条边都不能向外扩展的有效的矩阵)
+
+从中选出面积最大的，由于所有极大子矩阵都被考虑到了一定是整个矩阵中面积最大的矩阵
+
+正方形取矩形的min(长 , 宽)为长
+</code></pre><h1 id="l-r的处理"><a href="#l-r的处理" class="headerlink" title="l , r的处理"></a>l , r的处理</h1><pre><code>默认最左(右)的边界为它本身，若它与左(右)构成合法的序列，则继承其左(右)的边界
+</code></pre><h1 id="具体的状态转移方程看代码："><a href="#具体的状态转移方程看代码：" class="headerlink" title="具体的状态转移方程看代码："></a>具体的状态转移方程看代码：</h1><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    #include&lt;bits/stdc++.h&gt;</span><br><span class="line"></span><br><span class="line">    #define FOR(a , b , c) for (int a = b; a &lt;= c; a++)</span><br><span class="line"></span><br><span class="line">    #define FOL(a , b , c) for (int a = b; a &gt;= c; a--)</span><br><span class="line"></span><br><span class="line">    using namespace std;</span><br><span class="line"></span><br><span class="line">    const int N = 2007;</span><br><span class="line"></span><br><span class="line">    int n , m , ans1 , ans2;</span><br><span class="line"></span><br><span class="line">    int p[N][N] , l[N][N] , r[N][N] , u[N][N];</span><br><span class="line"></span><br><span class="line">    int main () &#123;</span><br><span class="line"></span><br><span class="line">    	scanf (&quot;%d %d&quot; , &amp;n , &amp;m);</span><br><span class="line"></span><br><span class="line">FOR (i , 1 , n)</span><br><span class="line">FOR (j , 1 , m) &#123;</span><br><span class="line"></span><br><span class="line">            	scanf (&quot;%d&quot; , &amp;p[i][j]);</span><br><span class="line"></span><br><span class="line">	l[i][j] = r[i][j] = j;</span><br><span class="line"></span><br><span class="line"> 		u[i][j] = 1;</span><br><span class="line">//初始化l , r , u</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">FOR (i , 1 , n)</span><br><span class="line">FOR (j , 2 , m)</span><br><span class="line">if (p[i][j] != p[i][j - 1])</span><br><span class="line">l[i][j] = l[i][j - 1];</span><br><span class="line">//初始化l , r</span><br><span class="line">FOR (i , 1 , n)</span><br><span class="line">FOL (j , m - 1 , 1)</span><br><span class="line">if (p[i][j] != p[i][j + 1])</span><br><span class="line">r[i][j] = r[i][j + 1];</span><br><span class="line"></span><br><span class="line"> 	FOR (i , 1 , n)</span><br><span class="line">FOR (j , 1 , m) &#123;</span><br><span class="line"></span><br><span class="line">	if (i &gt; 1 &amp;&amp; p[i][j] != p[i - 1][j]) &#123;</span><br><span class="line"></span><br><span class="line">		l[i][j] = max (l[i][j] , l[i - 1][j]);</span><br><span class="line">//跟新l , r , u不好理解可以画个图</span><br><span class="line">		r[i][j] = min (r[i][j] , r[i - 1][j]);</span><br><span class="line"></span><br><span class="line">		u[i][j] = u[i - 1][j] + 1;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int a = r[i][j] - l[i][j] + 1;</span><br><span class="line"></span><br><span class="line">	int b = min (a , u[i][j]);</span><br><span class="line"></span><br><span class="line">	ans1 = max (ans1 , b * b);</span><br><span class="line">//正方形</span><br><span class="line">	ans2 = max (ans2 , a * u[i][j]);</span><br><span class="line">//矩形</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf (&quot;%d\n%d&quot; , ans1 , ans2);</span><br><span class="line"></span><br><span class="line">return 0;	</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="后记分析"><a href="#后记分析" class="headerlink" title="后记分析"></a>后记分析</h1><pre><code>会了方法就不难，也算是学习了个新方法。
+</code></pre>
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/21/动规笔记P2051中国象棋/" title="动规笔记P2051中国象棋">
+                    <div class="prevTitle">动规笔记P2051中国象棋</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
             <!-- profile -->
             
         </div>
@@ -437,6 +538,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动规笔记"><span class="toc-number">1.</span> <span class="toc-text">动规笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#————P1169-棋盘制作"><span class="toc-number">1.1.</span> <span class="toc-text">————P1169 棋盘制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.2.</span> <span class="toc-text">题目</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#提取信息"><span class="toc-number">2.</span> <span class="toc-text">提取信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#垂线法"><span class="toc-number">3.</span> <span class="toc-text">垂线法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考-Clove-unique"><span class="toc-number">4.</span> <span class="toc-text">参考@Clove_unique</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#l-r的处理"><span class="toc-number">5.</span> <span class="toc-text">l , r的处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体的状态转移方程看代码："><span class="toc-number">6.</span> <span class="toc-text">具体的状态转移方程看代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记分析"><span class="toc-number">7.</span> <span class="toc-text">后记分析</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -564,6 +683,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
